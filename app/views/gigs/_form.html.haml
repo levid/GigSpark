@@ -1,0 +1,22 @@
+= form_for @gig do |f|
+  -if @gig.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gig.errors.count, "error")} prohibited this gig from being saved:"
+      %ul
+        - @gig.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :date
+    = f.datetime_select :date
+  .field
+    = f.label :booking
+    = f.check_box :booking
+  .field
+    = f.label :cover
+    = f.text_field :cover
+  .actions
+    = f.submit 'Save'

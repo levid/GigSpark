@@ -1,0 +1,19 @@
+%h1 Listing record_labels
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @record_labels.each do |record_label|
+    %tr
+      %td= record_label.name
+      %td= link_to 'Show', record_label
+      %td= link_to 'Edit', edit_record_label_path(record_label)
+      %td= link_to 'Destroy', record_label, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Record label', new_record_label_path

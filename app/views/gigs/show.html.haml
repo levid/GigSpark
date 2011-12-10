@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @gig.title
+%p
+  %b Date:
+  = @gig.date
+%p
+  %b Booking:
+  = @gig.booking
+%p
+  %b Cover:
+  = @gig.cover
+
+= link_to 'Edit', edit_gig_path(@gig)
+\|
+= link_to 'Back', gigs_path
